@@ -1,1 +1,52 @@
 node_modules
+# Fichiers de dépendances
+/node_modules
+
+# Fichiers de build
+/dist
+/tmp
+/out-tsc
+
+# Fichiers de cache
+/.angular/cache
+
+# Fichiers de configuration IDE
+/.idea
+/.vscode
+*.sublime-workspace
+*.sublime-project
+
+# Fichiers système d'exploitation
+.DS_Store
+Thumbs.db
+
+# Fichiers de logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichier environnement local
+/src/environments/environment.ts
+
+# Fichiers spécifiques à l'environnement qui ne devraient pas être partagés
+/src/environments/*.local.ts
+
+# Fichier de lock de package (à inclure ou exclure selon les préférences de l'équipe)
+# package-lock.json
+# yarn.lock
+
+# Fichiers de secrets (comme .env contenant des variables d'environnement sensibles)
+.env
+.env.local
+.env.*.local
+
+# Fichier angular.json si vous avez des configurations spécifiques à un utilisateur ou à une machine
+# angular.json
+
+# Fichiers de sauvegarde
+*.bak
+*.tmp
+
+# Fichiers de compilation AOT
+/aot
