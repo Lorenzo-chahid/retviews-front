@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'https://api-myc.onrender.com';
 
   constructor(private http: HttpClient, private router: Router) {}
   createUser(user: any): Observable<any> {
