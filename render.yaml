@@ -5,5 +5,5 @@ services:
     # Autres configurations nécessaires pour votre service
     staticPublishPath: ./dist/<your-angular-project-name>
     rewriteRules:
-      - source: /new
+      - source: /*
         destination: /index.html
