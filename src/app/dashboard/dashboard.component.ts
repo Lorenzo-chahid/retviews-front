@@ -19,15 +19,27 @@ export class DashboardComponent implements OnInit {
   }
 
   getUserInfo() {
-    // Vous aurez besoin d'implémenter une méthode dans AuthService pour récupérer les infos de l'utilisateur
-    // this.authService.getUserInfo().subscribe(user => this.user = user);
+    this.authService.getUserInfo().subscribe({
+      next: (user) => {
+        this.user = user;
+        console.log("TESTIO :: ", user)
+      },
+      error: (error) => {
+        console.error('Error fetching user info:', error);
+      }
+    });
   }
 
   getLastAddedItems() {
-    this.clothingService.getClothingItems().subscribe(items => {
-      // Vous devrez filtrer ou ajuster cette logique en fonction de la réponse de votre API
-      // Pour cet exemple, je suppose que vous avez déjà le dernier article par catégorie
-      this.lastAddedItems = items;
+    this.clothingService.getClothingItems().subscribe({
+      next: (items) => {
+        this.lastAddedItems = items;
+        // Vous devrez peut-être ajuster cette logique en fonction de la réponse de votre API
+        // et de la manière dont vous souhaitez filtrer ou traiter les éléments
+      },
+      error: (error) => {
+        console.error('Error fetching last added items:', error);
+      }
     });
   }
 }

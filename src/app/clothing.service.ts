@@ -33,6 +33,7 @@ getClothingItems(): Observable<ClothingItem[]> {
   return this.http.get<ClothingItem[]>(`${this.baseUrl}/clothing-items/`, { headers });
 }
 
+
 addClothingItem(name: string, description: string, imageUrl: string, categoryId: number): Observable<any> {
   const userId = localStorage.getItem('user_id'); 
   console.log(localStorage)

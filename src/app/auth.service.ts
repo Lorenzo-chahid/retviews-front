@@ -37,4 +37,17 @@ export class AuthService {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+
+  getUserInfo(): Observable<any> {
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+      throw new Error('Token not found');
+    }
+  
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+  
+    return this.http.get(`${this.baseUrl}/users/`, { headers });
+  }
 }

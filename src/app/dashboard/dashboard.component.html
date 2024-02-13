@@ -1,32 +1,5 @@
-<div *ngIf="user" class="card">
-    <header class="card-header">
-        <p class="card-header-title">
-            Dashboard de {{ user.name }}
-        </p>
-    </header>
-    <div class="card-content">
-        <div class="content">
-            <p>Email: {{ user.email }}</p>
-            <p>Username: {{ user.username }}</p>
-        </div>
-    </div>
-</div>
-
-<div class="columns is-multiline">
-    <div *ngFor="let item of lastAddedItems" class="column is-12-mobile is-6-tablet is-4-desktop">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img [src]="item.image_url" alt="Image du vêtement" class="clothing-img">
-                </figure>
-            </div>
-            <div class="card-content">
-                <p class="title is-5">Dernier ajout : {{ item.category.name }}</p>
-                <p class="subtitle is-6">{{ item.name }}</p>
-                <div class="content">
-                    {{ item.description }}
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- your-component.component.html -->
+<div *ngIf="user">
+    <h2>Bienvenue, {{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
 </div>
