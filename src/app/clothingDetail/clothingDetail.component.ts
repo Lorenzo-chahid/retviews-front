@@ -11,6 +11,7 @@ import { ClothingService, ClothingItem } from '../clothing.service';
 })
 export class ClothingDetailComponent implements OnInit {
   item: ClothingItem | undefined;
+  categories: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,15 @@ export class ClothingDetailComponent implements OnInit {
           this.item = item;
         });
       }
+    });
+    this.getClothingCategories();
+  }
+  getClothingCategories() {
+    this.clothingService.getClothingCategories().subscribe({
+      next: (data) => {
+        this.categories = data;
+      },
+      error: (e) => console.error(e)
     });
   }
 }
