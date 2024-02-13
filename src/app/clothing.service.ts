@@ -78,7 +78,7 @@ updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
 
   console.log("PAYLOAD :::: ", payload)
 
-  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, payload, { headers });
+  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, { headers });
 
 }
 
