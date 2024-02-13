@@ -1,0 +1,9 @@
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Nom du vêtement" type="text">
+    <textarea formControlName="description" placeholder="Description"></textarea>
+    <input formControlName="image_url" placeholder="URL de l'image" type="text">
+    <select formControlName="category_id">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    <button type="submit">Mettre à jour</button>
+</form>

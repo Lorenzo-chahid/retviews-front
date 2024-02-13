@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ClothingListComponent } from './clothingList/clothingList.component';
 import { ClothingFormComponent } from './clothingForm/clothingForm.component';
 import { ClothingDetailComponent } from './clothingDetail/clothingDetail.component';
+import { UpdateClothingComponent } from './updateClothing/updateClothing.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: "clothing", component: ClothingListComponent},
   { path: 'new', component: ClothingFormComponent },
-  { path: 'detail/:id', component: ClothingDetailComponent}
+  { path: 'detail/:id', component: UpdateClothingComponent}
 ];
 
 @NgModule({

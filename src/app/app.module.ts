@@ -12,6 +12,7 @@ import { ClothingListComponent } from './clothingList/clothingList.component';
 import { ClothingFormComponent } from './clothingForm/clothingForm.component';
 import { ClothingDetailComponent } from './clothingDetail/clothingDetail.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateClothingComponent } from './updateClothing/updateClothing.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     ClothingFormComponent,
     ClothingDetailComponent,
     HomeComponent,
+    UpdateClothingComponent,
   ],
   imports: [
     BrowserModule,
