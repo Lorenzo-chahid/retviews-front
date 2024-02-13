@@ -65,8 +65,19 @@ getClothingItemById(id: number): Observable<ClothingItem> {
 updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
   const token = localStorage.getItem('auth_token'); 
   const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
   });
+
+  const payload = {
+    name: clothingItem.name,
+    description: clothingItem.description,
+    image_url: clothingItem.image_url,
+    category_id: Number(clothingItem.category_id), 
+  };
+
+  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, payload, { headers });
+}
 
   return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, clothingItem, { headers });
 }
