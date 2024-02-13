@@ -40,6 +40,7 @@ export class ClothingDetailComponent implements OnInit {
 
   onSubmit() {
     console.log("STARTED UPDATE")
+    console.log("THIS ITEM ", this.item)
     if (this.item && this.item.id) { // Assurez-vous que l'objet item et son id existent
       this.clothingService.updateClothingItem(this.item.id, this.item).subscribe({
         next: (result) => {
