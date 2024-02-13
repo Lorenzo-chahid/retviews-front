@@ -73,13 +73,11 @@ updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
     name: clothingItem.name,
     description: clothingItem.description,
     image_url: clothingItem.image_url,
-    category_id: Number(clothingItem.category_id), 
+    category_id: Number(clothingItem.category_id), // Assurez-vous que c'est un nombre
   };
 
   return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, payload, { headers });
-}
 
-  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, clothingItem, { headers });
 }
 
 }
