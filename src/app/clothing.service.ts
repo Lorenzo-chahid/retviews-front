@@ -76,6 +76,8 @@ updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
     category_id: Number(clothingItem.category_id), // Assurez-vous que c'est un nombre
   };
 
+  console.log("PAYLOAD :::: ", payload)
+
   return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, payload, { headers });
 
 }
