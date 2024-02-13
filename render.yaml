@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: retchad
+    name: <your-service-name>
     env: static
     # Autres configurations nécessaires pour votre service
     staticPublishPath: ./dist/frontend
     rewriteRules:
-      - source: /*
+      - source: /new
         destination: /index.html

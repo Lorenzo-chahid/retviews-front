@@ -1,9 +1,12 @@
-<div class="dashboard-container">
-    <h1>Tableau de bord</h1>
-    <div class="user-info">
-        <p><strong>Nom d'utilisateur :</strong> {{ user?.username }}</p>
-        <p><strong>Email :</strong> {{ user?.email }}</p>
-        <p><strong>id :</strong> {{ user?.id }}</p>
-    </div>
-    <button (click)="logout()">Déconnexion</button>
+<div *ngIf="user">
+    <h2>Dashboard de {{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Username: {{ user.username }}</p>
+</div>
+
+<div *ngFor="let item of lastAddedItems">
+    <h3>Dernier vêtement ajouté dans la catégorie {{ item.category.name }}</h3>
+    <p>Nom: {{ item.name }}</p>
+    <p>Description: {{ item.description }}</p>
+    <img [src]="item.image_url" alt="Image du vêtement">
 </div>
