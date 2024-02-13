@@ -62,7 +62,6 @@ getClothingItemById(id: number): Observable<ClothingItem> {
   return this.http.get<ClothingItem>(`${this.baseUrl}/clothing-items/${id}`);
 }
 
-
 updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
   const token = localStorage.getItem('auth_token'); 
   const headers = new HttpHeaders({

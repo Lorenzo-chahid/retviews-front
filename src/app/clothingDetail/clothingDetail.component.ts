@@ -37,4 +37,17 @@ export class ClothingDetailComponent implements OnInit {
       error: (e) => console.error(e)
     });
   }
+
+  onSubmit() {
+    if (this.item && this.item.id) { // Assurez-vous que l'objet item et son id existent
+      this.clothingService.updateClothingItem(this.item.id, this.item).subscribe({
+        next: (result) => {
+          console.log('Vêtement mis à jour', result);
+          // Gérer la réussite, par exemple en redirigeant vers une autre page
+        },
+        error: (e) => console.error('Erreur lors de la mise à jour', e)
+      });
+    }
+  }
+  
 }
