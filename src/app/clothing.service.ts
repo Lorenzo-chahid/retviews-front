@@ -19,7 +19,7 @@ export interface ClothingItem {
   providedIn: 'root'
 })
 export class ClothingService {
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'https://api-myc.onrender.com';
 
   constructor(private http: HttpClient) {}
 
