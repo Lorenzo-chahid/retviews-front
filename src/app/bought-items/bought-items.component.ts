@@ -12,7 +12,7 @@ export class BoughtItemsComponent implements OnInit {
   constructor(private clothingService: ClothingService) { }
 
   ngOnInit(): void {
-    this.clothingService.getClothingItemsByCategory(1).subscribe(items => {
+    this.clothingService.getClothingItemsByCategory(3).subscribe(items => {
       this.items = items;
     });
   }

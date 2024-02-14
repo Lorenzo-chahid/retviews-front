@@ -19,11 +19,14 @@
             </div>
         </div>
         <div class="field is-grouped">
-            <div class="control">
+            <div class="control" *ngIf="!isLoggedIn">
                 <button type="submit" class="button is-success">Log In</button>
             </div>
-            <div class="control">
+            <div class="control" *ngIf="!isLoggedIn">
                 <button type="button" class="button is-link" (click)="goToSignup()">Sign Up</button>
+            </div>
+            <div class="control" *ngIf="isLoggedIn">
+                <button type="button" class="button is-danger" (click)="logout()">Log Out</button>
             </div>
         </div>
         <p *ngIf="errorMessage" class="error has-text-danger">{{ errorMessage }}</p>

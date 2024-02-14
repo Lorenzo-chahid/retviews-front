@@ -30,6 +30,16 @@ export class LoginComponent {
     });
   }
 
+  logout(): void {
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
+  }
+
+  get isLoggedIn(): boolean {
+    return !!localStorage.getItem('auth_token'); // Remplacez 'auth_token' par votre clé de token réelle
+  }
+  
   goToSignup() {
     this.router.navigate(['/signup']);
   }
