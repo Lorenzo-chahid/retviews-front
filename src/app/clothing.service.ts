@@ -1,5 +1,3 @@
-// clothing.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -73,12 +71,12 @@ updateClothingItem(item_id: number, clothingItem: any): Observable<any> {
     name: clothingItem.name,
     description: clothingItem.description,
     image_url: clothingItem.image_url,
-    category_id: Number(clothingItem.category_id), // Assurez-vous que c'est un nombre
+    category_id: Number(clothingItem.category_id),
   };
 
-  console.log("PAYLOAD :::: ", payload)
 
-  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, { headers });
+  return this.http.put(`${this.baseUrl}/edit-clothing/${item_id}/`, payload, { headers });
+
 
 }
 
