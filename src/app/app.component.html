@@ -13,10 +13,10 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item" routerLink="/dashboard">Clothes</a>
-            <a class="navbar-item" routerLink="/clothing">Bought</a>
-            <a class="navbar-item" routerLink="/wishlist">Wishlist</a>
-            <a class="navbar-item" routerLink="/wishlist">NiceToHave</a>
+            <a *ngIf="isLoggedIn" class="navbar-item" routerLink="/dashboard">Clothes</a>
+            <a *ngIf="isLoggedIn" class="navbar-item" routerLink="/clothing">Bought</a>
+            <a *ngIf="isLoggedIn" class="navbar-item" routerLink="/wishlist">Wishlist</a>
+            <a *ngIf="isLoggedIn" class="navbar-item" routerLink="/nicetohave">NiceToHave</a>
         </div>
     </div>
 </nav>

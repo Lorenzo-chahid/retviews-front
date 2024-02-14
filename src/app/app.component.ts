@@ -26,5 +26,8 @@ export class AppComponent implements OnInit {
       }
     });
   }
+  get isLoggedIn(): boolean {
+    return !!localStorage.getItem('auth_token'); // Remplacez 'auth_token' par votre clé de token réelle
+  }
 }
 
