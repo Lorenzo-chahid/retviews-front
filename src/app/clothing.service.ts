@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 export interface ClothingItem {
@@ -21,6 +22,27 @@ export class ClothingService {
 
   constructor(private http: HttpClient) {}
 
+  getClothingItemsByCategory(categoryId: number): Observable<ClothingItem[]> {
+    const token = localStorage.getItem('auth_token'); 
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<ClothingItem[]>(`${this.baseUrl}/clothing-items/`, { headers })
+      .pipe(map(items => items.filter(item => item.category.id === categoryId)));
+  }
+
+  getBoughtItems(): Observable<ClothingItem[]> {
+    return this.getClothingItemsByCategory(1); // Remplacez 1 par l'ID réel de la catégorie "Bought"
+  }
+
+  getWishlistItems(): Observable<ClothingItem[]> {
+    return this.getClothingItemsByCategory(2); // Remplacez 2 par l'ID réel de la catégorie "Wishlist"
+  }
+
+  getNiceToHaveItems(): Observable<ClothingItem[]> {
+    return this.getClothingItemsByCategory(3); // Remplacez 3 par l'ID réel de la catégorie "NiceToHave"
+  }
 
 getClothingItems(): Observable<ClothingItem[]> {
   const token = localStorage.getItem('auth_token'); 

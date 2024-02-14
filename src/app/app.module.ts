@@ -13,6 +13,9 @@ import { ClothingFormComponent } from './clothingForm/clothingForm.component';
 import { ClothingDetailComponent } from './clothingDetail/clothingDetail.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateClothingComponent } from './updateClothing/updateClothing.component';
+import { BoughtItemsComponent } from './bought-items/bought-items.component';
+import { WishlistItemsComponent } from './wishlist-items/wishlist-items.component';
+import { NiceToHaveItemsComponent } from './nice-to-have-items/nice-to-have-items.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { UpdateClothingComponent } from './updateClothing/updateClothing.compone
     ClothingDetailComponent,
     HomeComponent,
     UpdateClothingComponent,
+    BoughtItemsComponent,
+    WishlistItemsComponent,
+    NiceToHaveItemsComponent,
   ],
   imports: [
     BrowserModule,
