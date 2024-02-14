@@ -9,18 +9,15 @@
                 </span>
             </div>
         </div>
-        <div class="control" *ngIf="isLoggedIn">
-            <div class="field">
-                <label for="password" class="label">Password:</label>
-                <div class="control has-icons-left">
-                    <input type="password" id="password" class="input" [(ngModel)]="password" name="password" required>
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                </div>
+        <div class="field">
+            <label for="password" class="label">Password:</label>
+            <div class="control has-icons-left">
+                <input type="password" id="password" class="input" [(ngModel)]="password" name="password" required>
+                <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                </span>
             </div>
         </div>
-
         <div class="field is-grouped">
             <div class="control" *ngIf="!isLoggedIn">
                 <button type="submit" class="button is-success">Log In</button>
